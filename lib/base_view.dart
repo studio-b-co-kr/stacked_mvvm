@@ -1,3 +1,5 @@
+import 'dart:developer' as dev;
+
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +17,7 @@ abstract class BaseView<VM extends BaseViewModel> extends StatelessWidget {
   @override
   Widget build(BuildContext buildContext) {
     _contextWrapper.context = buildContext;
+    dev.log("build", name: "BaseView:$key");
     return body(buildContext);
   }
 

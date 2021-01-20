@@ -1,6 +1,6 @@
-import 'package:clean_architecture/clean_architecture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_clean_arch/clean_architecture.dart';
 
 import 'home_view_model.dart';
 

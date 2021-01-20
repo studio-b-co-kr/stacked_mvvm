@@ -1,6 +1,6 @@
-import 'package:clean_architecture/clean_architecture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_clean_arch/clean_architecture.dart';
 
 import 'home_view.dart';
 import 'home_view_model.dart';
@@ -8,24 +8,21 @@ import 'home_view_model.dart';
 class HomePage extends BasePage<HomeViewModel> {
   static const ROUTE_NAME = "/";
 
-  HomePage({Key key, HomeViewModel viewModel})
-      : super(key: key, viewModel: viewModel);
+  HomePage({Key key, HomeViewModel viewModel, ViewBuilder builder})
+      : super(key: key, viewModel: viewModel, builder: builder);
 
   static Route<dynamic> route(RouteSettings settings) {
     return MaterialPageRoute(
       settings: settings,
-      builder: (context) => HomePage(viewModel: HomeViewModel()),
+      builder: (context) => HomePage(
+        key: LabeledGlobalKey("HomePage"),
+        viewModel: HomeViewModel(),
+        builder: (context) => HomeView(key: LabeledGlobalKey("HomeView")),
+      ),
     );
   }
 
-  @override
-  BaseView<BaseViewModel> buildView(BuildContext buildContext) {
-    return HomeView();
-  }
-
-  @override
   Future loggingOpen() async {}
 
-  @override
   String get screenName => "splash";
 }

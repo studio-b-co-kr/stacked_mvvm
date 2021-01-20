@@ -1,5 +1,5 @@
-import 'package:clean_architecture/clean_architecture.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_clean_arch/clean_architecture.dart';
 
 class HomeViewModel extends BaseViewModel {
   int _count = 0;

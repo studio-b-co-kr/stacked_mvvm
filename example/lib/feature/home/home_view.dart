@@ -1,7 +1,6 @@
-// ignore: must_be_immutable
-import 'package:clean_architecture/clean_architecture.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_clean_arch/clean_architecture.dart';
 
 import 'count_view.dart';
 import 'home_view_model.dart';
@@ -21,7 +20,7 @@ class HomeView extends BaseView<HomeViewModel> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('You have pushed the button this many times:'),
-            CountView(),
+            CountView(key: LabeledGlobalKey("CountView"),),
           ],
         ),
       ),
