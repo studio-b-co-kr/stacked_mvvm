@@ -14,7 +14,7 @@ abstract class BaseViewModel<S> with ChangeNotifier, DiagnosticableTreeMixin {
   bool get shouldUpdate => _shouldUpdate;
 
   /// use this method to move other screen or show popup
-  notifyOnly({S state}) {
+  update({S state}) {
     this.state = state ?? this.state;
     _shouldUpdate = false;
     notifyListeners();

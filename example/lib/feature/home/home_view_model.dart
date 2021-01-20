@@ -8,7 +8,7 @@ class HomeViewModel extends BaseViewModel<HomeState> {
 
   void increment() {
     _count++;
-    notifyOnly(state: HomeState.First);
+    update(state: HomeState.First);
   }
 
   @override
