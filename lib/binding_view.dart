@@ -1,18 +1,13 @@
-import 'dart:developer' as dev;
+part of 'clean_architecture.dart';
 
-import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
-
-import 'base_view_model.dart';
-
-abstract class BaseView<VM extends BaseViewModel> extends StatelessWidget {
+abstract class BindingView<VM extends BaseViewModel> extends StatelessWidget {
   final ContextWrapper _contextWrapper = ContextWrapper();
 
   VM get read => _context.read<VM>();
 
   VM get watch => _context.watch<VM>();
 
-  BaseView({Key key}) : super(key: key);
+  BindingView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext buildContext) {

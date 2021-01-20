@@ -5,11 +5,11 @@ import 'package:flutter_clean_arch/clean_architecture.dart';
 import 'home_view.dart';
 import 'home_view_model.dart';
 
-class HomePage extends BasePage<HomeViewModel> {
+class HomePage extends BasePage<HomeState, HomeViewModel> {
   static const ROUTE_NAME = "/";
 
-  HomePage({Key key, HomeViewModel viewModel, ViewBuilder builder})
-      : super(key: key, viewModel: viewModel, builder: builder);
+  HomePage({Key key, HomeViewModel viewModel, HomeView view})
+      : super(key: key, viewModel: viewModel, view: view);
 
   static Route<dynamic> route(RouteSettings settings) {
     return MaterialPageRoute(
@@ -17,12 +17,14 @@ class HomePage extends BasePage<HomeViewModel> {
       builder: (context) => HomePage(
         key: LabeledGlobalKey("HomePage"),
         viewModel: HomeViewModel(),
-        builder: (context) => HomeView(key: LabeledGlobalKey("HomeView")),
+        view: HomeView(key: LabeledGlobalKey("HomeView")),
       ),
     );
   }
 
-  Future loggingOpen() async {}
-
+  @override
   String get screenName => "splash";
+
+  @override
+  Future logScreenOpen() async {}
 }

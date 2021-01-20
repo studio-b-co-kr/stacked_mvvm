@@ -4,7 +4,7 @@ import 'package:flutter_clean_arch/clean_architecture.dart';
 
 import 'home_view_model.dart';
 
-class CountView extends BaseView<HomeViewModel> {
+class CountView extends BindingView<HomeViewModel> {
   CountView({Key key}) : super(key: key);
 
   @override

@@ -1,40 +1,25 @@
-import 'dart:developer' as dev;
+part of 'clean_architecture.dart';
 
-import 'package:provider/provider.dart';
+class BaseWidget<S, VM extends BaseViewModel<S>> extends StatelessWidget {
+  final Key key;
+  final VM viewModel;
+  final BindingView<VM> view;
 
-import 'base_view.dart';
-import 'base_view_model.dart';
+  BaseWidget({this.key, this.viewModel, this.view}) : super(key: key);
 
-typedef BaseView<BaseViewModel> ViewBuilder(BuildContext context);
+  @override
+  Widget build(BuildContext context) {
+    return BaseViewModelWidget(
+        viewModel: this.viewModel,
+        builder: (context) {
+          return view;
+        },
+        onListen: (ctx, state) {
+          onListen(ctx, state);
+        });
+  }
 
-abstract class BaseWidget<VM extends BaseViewModel>
-    extends ChangeNotifierProvider<VM> {
-  /// handle state to change page or show dialog.
-  final Function(BuildContext context) onListen;
-
-  BaseWidget({Key key, VM viewModel, ViewBuilder builder, this.onListen})
-      : assert(builder != null),
-        assert(viewModel != null),
-        super(
-            key: key,
-            create: (_) => viewModel,
-            builder: (context, widget) => Selector<VM, bool>(
-                  shouldRebuild: (previous, shouldUpdate) {
-                    dev.log("shouldUpdate:$shouldUpdate",
-                        name: "BaseWidget:$key");
-                    return shouldUpdate;
-                  },
-                  selector: (c1, viewModel) {
-                    dev.log(
-                        "selector:${viewModel.shouldUpdate}, viewModel.state = ${viewModel?.state}",
-                        name: "BaseWidget:$key");
-                    if (onListen != null) onListen(c1);
-                    return viewModel.shouldUpdate;
-                  },
-                  builder: (c2, shouldUpdate, widget) {
-                    dev.log("builder:$shouldUpdate", name: "BaseWidget:$key");
-                    return shouldUpdate ? builder(c2) : widget;
-                  },
-                  child: builder(context),
-                ));
+  onListen(BuildContext context, S state) {
+    dev.log("onListen:state = $state", name: "BaseWidget:$key");
+  }
 }

@@ -5,7 +5,7 @@ import 'package:flutter_clean_arch/clean_architecture.dart';
 import 'count_view.dart';
 import 'home_view_model.dart';
 
-class HomeView extends BaseView<HomeViewModel> {
+class HomeView extends BindingView<HomeViewModel> {
   HomeView({Key key}) : super(key: key);
 
   @override
@@ -20,7 +20,9 @@ class HomeView extends BaseView<HomeViewModel> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('You have pushed the button this many times:'),
-            CountView(key: LabeledGlobalKey("CountView"),),
+            CountView(
+              key: LabeledGlobalKey("CountView"),
+            ),
           ],
         ),
       ),

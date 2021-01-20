@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'clean_architecture.dart';
 
 abstract class BaseModel extends Equatable {
   @override

@@ -1,23 +1,19 @@
-import 'dart:developer' as dev;
+part of 'clean_architecture.dart';
 
-import 'base_view_model.dart';
-import 'base_widget.dart';
-
-abstract class BasePage<VM extends BaseViewModel> extends BaseWidget<VM> {
-  BasePage(
-      {Key key,
-      VM viewModel,
-      ViewBuilder builder,
-      Function(BuildContext context) onListen})
-      : super(
-            key: key,
-            viewModel: viewModel,
-            builder: builder,
-            onListen: onListen) {
+abstract class BasePage<S, VM extends BaseViewModel<S>>
+    extends BaseWidget<S, VM> {
+  BasePage({Key key, VM viewModel, BindingView<VM> view})
+      : super(key: key, viewModel: viewModel, view: view) {
     onCreated();
   }
 
+  @mustCallSuper
   onCreated() async {
     dev.log("onCreated", name: "BasePage:$key");
+    logScreenOpen();
   }
+
+  Future logScreenOpen();
+
+  String get screenName;
 }

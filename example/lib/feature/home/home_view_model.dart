@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_clean_arch/clean_architecture.dart';
 
-class HomeViewModel extends BaseViewModel {
+class HomeViewModel extends BaseViewModel<HomeState> {
   int _count = 0;
 
   int get count => _count;
