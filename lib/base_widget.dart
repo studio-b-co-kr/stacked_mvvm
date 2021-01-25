@@ -5,7 +5,10 @@ class BaseWidget<S, VM extends BaseViewModel<S>> extends StatelessWidget {
   final VM viewModel;
   final BindingView<VM> view;
 
-  BaseWidget({this.key, this.viewModel, this.view}) : super(key: key);
+  BaseWidget({this.key, this.viewModel, this.view})
+      : assert(view != null),
+        assert(viewModel != null),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
