@@ -15,15 +15,15 @@ part 'base_widget.dart';
 
 part 'binding_view.dart';
 
-typedef BindingView<BaseViewModel> ViewBuilder(BuildContext context);
+typedef BindingView<BaseViewModel> _ViewBuilder(BuildContext context);
 
-class _BaseViewModelWidget<VM extends BaseViewModel>
+class _BaseViewModelWidget<S, VM extends BaseViewModel<S>>
     extends ChangeNotifierProvider<VM> {
   _BaseViewModelWidget({
     Key key,
     VM viewModel,
-    ViewBuilder builder,
-    Function(BuildContext, dynamic) onListen,
+    _ViewBuilder builder,
+    Function(BuildContext, S) onListen,
   })  : assert(builder != null),
         assert(viewModel != null),
         super(

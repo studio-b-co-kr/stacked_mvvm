@@ -12,7 +12,7 @@ class BaseWidget<S, VM extends BaseViewModel<S>> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _BaseViewModelWidget(
+    return _BaseViewModelWidget<S, VM>(
         viewModel: this.viewModel,
         builder: (context) {
           return view;
