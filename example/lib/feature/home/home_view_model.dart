@@ -1,14 +1,14 @@
+import 'package:example/viewmodel/i_home_viewmodel.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_clean_arch/clean_architecture.dart';
 
-class HomeViewModel extends BaseViewModel<HomeState> {
+class HomeViewModel extends IHomeViewModel {
   int _count = 0;
 
   int get count => _count;
 
   void increment() {
     _count++;
-    update(state: HomeState.First);
+    update(state: HomeViewState.First);
   }
 
   @override
@@ -18,11 +18,5 @@ class HomeViewModel extends BaseViewModel<HomeState> {
   }
 
   @override
-  get initState => HomeState.Init;
-}
-
-enum HomeState {
-  Init,
-  First,
-  Second,
+  get initState => HomeViewState.Init;
 }

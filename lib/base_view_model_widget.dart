@@ -9,6 +9,8 @@ part 'base_model.dart';
 
 part 'base_page.dart';
 
+part 'base_repository.dart';
+
 part 'base_view_model.dart';
 
 part 'base_widget.dart';
@@ -17,11 +19,14 @@ part 'binding_view.dart';
 
 typedef BindingView<BaseViewModel> _ViewBuilder(BuildContext context);
 
-class _BaseViewModelWidget<S, VM extends BaseViewModel<S>>
-    extends ChangeNotifierProvider<VM> {
+class _BaseViewModelWidget<S, R extends BaseRepository,
+    VM extends BaseViewModel<S, R>> extends ChangeNotifierProvider<VM> {
+  final R repository;
+
   _BaseViewModelWidget({
     Key key,
     VM viewModel,
+    this.repository,
     _ViewBuilder builder,
     Function(BuildContext, S) onListen,
   })  : assert(builder != null),
