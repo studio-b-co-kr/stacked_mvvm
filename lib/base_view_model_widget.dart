@@ -1,14 +1,25 @@
 import 'dart:developer' as dev;
 
+import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
-import 'clean_architecture.dart';
+part 'base_model.dart';
 
-class BaseViewModelWidget<VM extends BaseViewModel>
+part 'base_page.dart';
+
+part 'base_view_model.dart';
+
+part 'base_widget.dart';
+
+part 'binding_view.dart';
+
+typedef BindingView<BaseViewModel> ViewBuilder(BuildContext context);
+
+class _BaseViewModelWidget<VM extends BaseViewModel>
     extends ChangeNotifierProvider<VM> {
-  BaseViewModelWidget({
+  _BaseViewModelWidget({
     Key key,
     VM viewModel,
     ViewBuilder builder,

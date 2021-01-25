@@ -1,4 +1,4 @@
-part of 'clean_architecture.dart';
+part of 'base_view_model_widget.dart';
 
 class BaseWidget<S, VM extends BaseViewModel<S>> extends StatelessWidget {
   final Key key;
@@ -12,7 +12,7 @@ class BaseWidget<S, VM extends BaseViewModel<S>> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseViewModelWidget(
+    return _BaseViewModelWidget(
         viewModel: this.viewModel,
         builder: (context) {
           return view;

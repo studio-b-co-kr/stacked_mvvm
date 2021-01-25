@@ -1,4 +1,4 @@
-part of 'clean_architecture.dart';
+part of 'base_view_model_widget.dart';
 
 abstract class BindingView<VM extends BaseViewModel> extends StatelessWidget {
   final ContextWrapper _contextWrapper = ContextWrapper();

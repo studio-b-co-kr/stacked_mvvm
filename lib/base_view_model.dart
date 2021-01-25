@@ -1,4 +1,4 @@
-part of 'clean_architecture.dart';
+part of 'base_view_model_widget.dart';
 
 abstract class BaseViewModel<S> with ChangeNotifier, DiagnosticableTreeMixin {
   S state;

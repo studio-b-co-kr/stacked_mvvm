@@ -1,9 +1,9 @@
+import 'package:example/feature/home/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_clean_arch/clean_architecture.dart';
 
 import 'home_view.dart';
-import 'home_view_model.dart';
 
 class HomePage extends BasePage<HomeState, HomeViewModel> {
   static const ROUTE_NAME = "/";
