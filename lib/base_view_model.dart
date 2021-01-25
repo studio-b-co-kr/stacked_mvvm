@@ -4,9 +4,10 @@ abstract class BaseViewModel<S, R extends BaseRepository>
     with ChangeNotifier, DiagnosticableTreeMixin {
   S state;
   bool _shouldUpdate = false;
+  final R repository;
 
   @mustCallSuper
-  BaseViewModel() {
+  BaseViewModel({this.repository}) {
     state = initState;
   }
 
