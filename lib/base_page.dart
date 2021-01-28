@@ -14,10 +14,4 @@ abstract class BasePage<VM extends BaseViewModel> extends BaseWidget<VM> {
   Future logScreenOpen();
 
   String get screenName;
-
-  @override
-  void onListen(context, state) {
-    // TODO: implement onListen
-    return super.onListen(context, state);
-  }
 }
