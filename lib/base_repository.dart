@@ -1,3 +1,3 @@
-part of 'stacked_mvvmvs.dart';
+part of 'stacked_mvvm.dart';
 
 abstract class BaseRepository {}

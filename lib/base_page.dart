@@ -1,4 +1,4 @@
-part of 'stacked_mvvmvs.dart';
+part of 'stacked_mvvm.dart';
 
 abstract class BasePage<VM extends BaseViewModel> extends BaseWidget<VM> {
   BasePage({Key key, VM viewModel}) : super(key: key, viewModel: viewModel) {

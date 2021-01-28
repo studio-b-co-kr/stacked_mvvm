@@ -1,5 +1,5 @@
 import 'package:example/repository/i_home_repository.dart';
-import 'package:flutter_clean_arch/stacked_mvvmvs.dart';
+import 'package:stacked_mvvm/stacked_mvvm.dart';
 
 abstract class IHomeViewModel
     extends BaseViewModel<HomeViewState, IHomeRepository> {

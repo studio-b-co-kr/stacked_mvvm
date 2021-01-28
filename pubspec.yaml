@@ -1,5 +1,5 @@
-name: flutter_clean_arch
-description: Clean Architecture for Flutter
+name: stacked_mvvm
+description: MVVM architecture implementation
 version: 0.0.1
 author:
 homepage:

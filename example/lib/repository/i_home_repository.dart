@@ -1,3 +1,3 @@
-import 'package:flutter_clean_arch/stacked_mvvmvs.dart';
+import 'package:stacked_mvvm/stacked_mvvm.dart';
 
 abstract class IHomeRepository extends BaseRepository {}

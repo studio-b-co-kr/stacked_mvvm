@@ -1,4 +1,4 @@
-part of 'stacked_mvvmvs.dart';
+part of 'stacked_mvvm.dart';
 
 abstract class BaseWidget<VM extends BaseViewModel> extends StatelessWidget {
   final VM viewModel;

@@ -1,4 +1,4 @@
-part of 'stacked_mvvmvs.dart';
+part of 'stacked_mvvm.dart';
 
 abstract class BindingView<VM extends BaseViewModel>
     extends ViewModelWidget<VM> {
