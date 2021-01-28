@@ -21,5 +21,5 @@ abstract class BaseWidget<VM extends BaseViewModel> extends StatelessWidget {
 
   BindingView body(BuildContext context, VM viewModel, Widget child);
 
-  onListen(context, state) {}
+  onListen(BuildContext context, dynamic) {}
 }
