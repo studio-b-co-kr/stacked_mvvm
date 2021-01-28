@@ -10,9 +10,16 @@ abstract class BaseWidget<VM extends BaseViewModel> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<VM>.reactive(
-      viewModelBuilder: () => viewModel,
-      onModelReady: (model) => model.init(),
+      viewModelBuilder: () {
+        dev.log("viewModelBuilder", name: "BaseWidget");
+        return viewModel;
+      },
+      onModelReady: (model) {
+        dev.log("onModelReady", name: "BaseWidget");
+        model.init();
+      },
       builder: (context, model, child) {
+        dev.log("builder", name: "BaseWidget");
         onListen(context, model);
         return body(context, model, child);
       },
