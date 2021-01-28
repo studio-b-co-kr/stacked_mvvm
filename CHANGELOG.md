@@ -1,3 +1,5 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.2] - 2020/01/28
+ * init#2
 
-* TODO: Initial release of mvvm.
+## [0.0.1] - 2020/01/28
+ * init#1
