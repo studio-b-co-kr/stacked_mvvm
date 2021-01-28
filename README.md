@@ -1,4 +1,4 @@
-# scoped_mvvm
+# stacked_mvvm
 
 Clean Architecture for Flutter
 
