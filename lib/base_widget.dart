@@ -31,5 +31,7 @@ abstract class BaseWidget<VM extends BaseViewModel> extends StatelessWidget {
   BindingView body(BuildContext context, VM viewModel, Widget child);
 
   @mustCallSuper
-  onListen(BuildContext context, VM viewModel) {}
+  onListen(BuildContext context, VM viewModel) {
+    dev.log("onListen:${viewModel?.state}", name: "BaseWidget");
+  }
 }
