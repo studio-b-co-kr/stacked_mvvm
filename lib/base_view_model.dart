@@ -3,7 +3,6 @@ part of 'stacked_mvvm.dart';
 abstract class BaseViewModel<S, R extends BaseRepository>
     with ChangeNotifier, DiagnosticableTreeMixin {
   S state;
-  bool _shouldUpdate = false;
   final R repository;
 
   @mustCallSuper
@@ -13,12 +12,9 @@ abstract class BaseViewModel<S, R extends BaseRepository>
 
   S get initState;
 
-  bool get shouldUpdate => _shouldUpdate;
-
   /// use this method to move other screen or show popup
   update({S state}) {
-    this.state = state ?? this.state;
-    _shouldUpdate = false;
+    this.state = state;
     notifyListeners();
   }
 
