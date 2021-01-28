@@ -1,5 +1,8 @@
-import 'package:example/viewmodel/i_home_viewmodel.dart';
 import 'package:flutter/foundation.dart';
+
+import '../../repository/i_home_repository.dart';
+import '../../viewmodel/i_home_viewmodel.dart';
+import 'home_repository.dart';
 
 class HomeViewModel extends IHomeViewModel {
   int _count = 0;
@@ -22,4 +25,7 @@ class HomeViewModel extends IHomeViewModel {
 
   @override
   init() {}
+
+  @override
+  IHomeRepository get repository => HomeRepository();
 }
