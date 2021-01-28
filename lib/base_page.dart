@@ -1,11 +1,7 @@
-part of 'base_view_model_widget.dart';
+part of 'stacked_mvvmvs.dart';
 
-abstract class BasePage<S, R extends BaseRepository,
-    VM extends BaseViewModel<S, R>> extends BaseWidget<S, R, VM> {
-  BasePage({Key key, VM viewModel, R repository, BindingView<VM> view})
-      : assert(view != null),
-        assert(viewModel != null),
-        super(key: key, viewModel: viewModel, view: view) {
+abstract class BasePage<VM extends BaseViewModel> extends BaseWidget<VM> {
+  BasePage({Key key, VM viewModel}) : super(key: key, viewModel: viewModel) {
     onCreated();
   }
 
@@ -18,4 +14,10 @@ abstract class BasePage<S, R extends BaseRepository,
   Future logScreenOpen();
 
   String get screenName;
+
+  @override
+  void onListen(context, state) {
+    // TODO: implement onListen
+    return super.onListen(context, state);
+  }
 }

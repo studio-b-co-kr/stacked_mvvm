@@ -1,4 +1,4 @@
-part of 'base_view_model_widget.dart';
+part of 'stacked_mvvmvs.dart';
 
 abstract class BaseViewModel<S, R extends BaseRepository>
     with ChangeNotifier, DiagnosticableTreeMixin {
@@ -21,6 +21,8 @@ abstract class BaseViewModel<S, R extends BaseRepository>
     _shouldUpdate = false;
     notifyListeners();
   }
+
+  init() {}
 
   @mustCallSuper
   @override

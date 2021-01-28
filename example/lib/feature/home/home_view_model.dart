@@ -19,4 +19,7 @@ class HomeViewModel extends IHomeViewModel {
 
   @override
   get initState => HomeViewState.Init;
+
+  @override
+  init() {}
 }

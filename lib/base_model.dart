@@ -1,4 +1,4 @@
-part of 'base_view_model_widget.dart';
+part of 'stacked_mvvmvs.dart';
 
 abstract class BaseModel extends Equatable {
   @override

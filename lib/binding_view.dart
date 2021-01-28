@@ -1,26 +1,9 @@
-part of 'base_view_model_widget.dart';
+part of 'stacked_mvvmvs.dart';
 
-abstract class BindingView<VM extends BaseViewModel> extends StatelessWidget {
-  final ContextWrapper _contextWrapper = ContextWrapper();
-
-  VM get read => _context.read<VM>();
-
-  VM get watch => _context.watch<VM>();
-
+abstract class BindingView<VM extends BaseViewModel>
+    extends ViewModelWidget<VM> {
   BindingView({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext buildContext) {
-    _contextWrapper.context = buildContext;
-    dev.log("build", name: "BaseView:$key");
-    return body(buildContext);
-  }
-
-  Widget body(BuildContext buildContext);
-
-  BuildContext get _context => _contextWrapper.context;
-}
-
-class ContextWrapper {
-  BuildContext context;
+  Widget build(BuildContext context, VM viewModel);
 }
