@@ -13,7 +13,7 @@ abstract class BaseWidget<VM extends BaseViewModel> extends StatelessWidget {
       viewModelBuilder: () => viewModel,
       onModelReady: (model) => model.init(),
       builder: (context, model, child) {
-        onListen(context, model.state);
+        onListen(context, model);
         return body(context, model, child);
       },
     );
