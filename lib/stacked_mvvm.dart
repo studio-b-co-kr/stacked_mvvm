@@ -4,7 +4,6 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
-import 'dart:developer' as dev;
 
 part 'base_model.dart';
 
