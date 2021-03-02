@@ -26,7 +26,7 @@ class HomePage extends BasePage<IHomeViewModel> {
   String get screenName => "splash";
 
   @override
-  Future logScreenOpen() async {}
+  Future logScreenOpen(String screenName) async {}
 
   @override
   BindingView<IHomeViewModel> body(
