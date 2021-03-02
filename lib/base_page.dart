@@ -9,10 +9,10 @@ abstract class BasePage<VM extends BaseViewModel> extends BaseWidget<VM> {
   @mustCallSuper
   onCreated() async {
     dev.log("onCreated", name: "BasePage:$key");
-    logScreenOpen();
+    logScreenOpen(screenName);
   }
 
-  Future logScreenOpen();
+  Future logScreenOpen(String screenName);
 
   String get screenName;
 }
