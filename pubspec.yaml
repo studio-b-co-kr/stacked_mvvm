@@ -12,8 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  equatable: ^1.2.3
-  stacked: ^1.7.7
+  equatable: ^2.0.0
+  stacked: ^1.9.5
 
 dev_dependencies:
   flutter_test:
